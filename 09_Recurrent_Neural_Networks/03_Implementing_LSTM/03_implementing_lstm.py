@@ -133,7 +133,7 @@ class LSTM_Model():
             self.batch_size = batch_size
             self.training_seq_len = training_seq_len
         
-        self.lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(rnn_size)
+        self.lstm_cell = tf.contrib.rnn.BasicLSTMCell(rnn_size)
         self.initial_state = self.lstm_cell.zero_state(self.batch_size, tf.float32)
         
         self.x_data = tf.placeholder(tf.int32, [self.batch_size, self.training_seq_len])
